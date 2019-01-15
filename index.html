@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
@@ -222,9 +222,7 @@
      * @param  {MouseEvent/TouchEvent} evt tho on press event
      */
     function onpress(evt) {
-
         switch (currentstate) {
-
             // change state and update bird velocity
             case states.Splash:
                 currentstate = states.Game;
@@ -293,7 +291,8 @@
 
         // initate graphics and okbtn
         var img = new Image();
-        img.onload = function () {
+        img.src = "./static/sheet.png";
+        img.addEventListener('load', function () {
             initSprites(this);
             ctx.fillStyle = s_bg.color;
 
@@ -302,11 +301,10 @@
                 y: height - 200,
                 width: s_buttons.Ok.width,
                 height: s_buttons.Ok.height
-            }
+            };
 
             run();
-        }
-        img.src = "static/sheet.png";
+        });
     }
 
     /**
